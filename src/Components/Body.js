@@ -20,7 +20,7 @@ const Body = (props) => {
     function change() {  //0+1%3
         const newIndex = (index + 1) % fruits.length
         setIndex(newIndex)
-    }
+    }   
 
     return (
         <div>
@@ -50,7 +50,5 @@ const Body = (props) => {
         </div>
     )
 }
-
-
-export default Body
+export default Body                                                                     `                           `
  
