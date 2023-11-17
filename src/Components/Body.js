@@ -1,54 +1,56 @@
-import React, { useState } from 'react'
-import Image from '../Image/download.jpg'
-import ReactPlayer from 'react-player'
-const Body = (props) => {
-    const [likes, setLikes] = useState(0) 
+import React, { useState } from 'react';
+import Image from '../Image/download.jpg';
+import ReactPlayer from 'react-player';
+import './Body.css';
+
+const Body = () => {
+    const [likes, setLikes] = useState(0);
     function count() {
-        setLikes(likes + 1);  
+        setLikes(likes + 1);
     }
-    const [text, setText] = useState('')
+
+    const [text, setText] = useState('');
     function reset() {
         setText('');
     }
-
-    const [fruits, setFruits] = useState([
-        { fruit: 'water melon' },
-        { fruit: 'apple' },
-        {fruit:'mango'}
+    const [texts, setTexts] = useState([
+        { text: 'jujutshu kaisen' },
+        { text: 'Onepiece' },
+        { text: 'naruto' }
     ])
-    const [index, setIndex] = useState(0)  // 1
-    function change() {  //0+1%3
-        const newIndex = (index + 1) % fruits.length
+    const [index, setIndex] = useState(0)
+    function change() {
+        const newIndex = (index + 1) % texts.length
         setIndex(newIndex)
-    }   
-
+    }
     return (
-        <div>
-            <div style={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+        <div className='container'>
+            <div className='image'>
                 <img src={Image} alt="images" /> <br />
-                <p>likes: {likes}</p>
-                {/* destructuring */}
-                <button onClick={count}>Like</button>
+                <p className='para'>An image is a visual representation of something. An image can be a two-dimensional (2D) representation, such as a drawing, painting, or photograph, or a three-dimensional (3D) object, such as a carving or sculpture. <br /> <br /> likes: {likes}</p> <br />
+                <button onClick={count} className='like-button'>Like</button>
             </div>
-            <div style={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
+            <div className='inp'>
                 <label htmlFor="Name">Name : </label>
                 <input type="text" value={text} onChange={(e) => setText(e.target.value)} />
                 <p>output : {text}</p>
-                <button onClick={props.fun}>Click me</button>
+                <button onClick={reset}>Reset</button>
             </div>
-            <div style={{ paddingTop: '50px', display: 'flex', justifyContent: 'center', alignItems: 'center', flexDirection: 'column' }}>
-                {/* pass down url link in url attribuite */}
-                <ReactPlayer url={'https://www.youtube.com/watch?v=WcxMOcxGYRk'} height={200} controls />
-                <div>
-                    <p>i like this </p>
+            <div>
+
+
+            </div>
+            <div>
+                <div className='video'>
+                    <ReactPlayer url={'https://www.youtube.com/watch?v=WcxMOcxGYRk'} controls />
                 </div>
                 <div>
-            <p>i like this {fruits[index].fruit}</p>
-            <button onClick={change}>Change me</button>
-        </div>
+                    <p>Anime : {texts[index].text}</p>
+                    <button onClick={change} className='change-button '>Change me</button>
+                </div>
             </div>
         </div>
-    )
-}
-export default Body                                                                     `                           `
- 
+    );
+};
+
+export default Body;
