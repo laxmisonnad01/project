@@ -1,0 +1,52 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    },
+    {
+      "title": "hii",
+      "completed": false,
+      "id": 2
+    },
+    {
+      "title": "laxmi",
+      "completed": false,
+      "id": 3
+    },
+    {
+      "title": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQY4PPNojgMAImvjm5h4etrn-MtwcAeJkvxF7ikjL&s",
+      "completed": false,
+      "id": 4
+    },
+    {
+      "title": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAQY4PPNojgMAImvjm5h4etrn-MtwcAeJkvxF7ikjL&s",
+      "completed": false,
+      "id": 5
+    },
+    {
+      "completed": false,
+      "id": 6
+    },
+    {
+      "completed": false,
+      "id": 7
+    },
+    {
+      "title": "",
+      "completed": false,
+      "id": 8
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
